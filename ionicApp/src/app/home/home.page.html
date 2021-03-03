@@ -1,0 +1,18 @@
+<ion-header [translucent]="true" ion-text->
+  <ion-toolbar>
+    <ion-title>
+      <strong>Pet Wallet</strong>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<h1>O Pet Wallet ajuda você a administrar melhor os gastos com seus pets.</h1><br><br>
+<ion-content id="principal" padding>
+  <h3>Digite o valor gasto em reais:</h3>
+  <ion-item>
+    <ion-label position="fixed">R$</ion-label>
+    <ion-input [(ngModel)]="valor" type="number" placeholder="Valor gasto" ></ion-input>
+    <ion-icon name="cash-outline"></ion-icon>
+  </ion-item>
+  <br>
+  <ion-button (click)="send()" shape="round" color="primary">Salvar dados</ion-button>
+</ion-content>

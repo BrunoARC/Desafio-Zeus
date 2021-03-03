@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Pet Wallet</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="/style.css"/>
+</head>
+
+<body>
+	<div id="informacao">
+		<img src="public/LogoPW.png">
+		<h2>
+			O Pet Wallet ajuda você a administrar melhor os gastos com seus pets.
+		</h2>
+	</div>
+	<div id="conteiner">
+		<h1 style="color: #89b300">Adicione suas transações:</h1>
+		<form id="formulario" method="POST" action="/">
+			Valor gasto em reais(R$):<br />
+			<input type="number" name="valor" required /><br /><br />
+
+			Data da transação:<br />
+			<input type="month" name="date" required /><br /><br />
+			<button type="submit" value="Adicionar transação">
+				Adicionar transação</button><br /><br />
+		</form>
+		<hr />
+		<form>
+			<h4>Consulte seu gasto mensal:</h4>
+			<input type="month" name="mes" />
+			<input id="consultar" type="submit" name="consultar" value="Conferir" required />
+		</form>
+		<h4>Seu gasto nesse mês foi de:</h4>
+		<input type="text" name="gastomensal" />
+	</div>
+</body>
+
+</html>
