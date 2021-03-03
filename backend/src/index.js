@@ -27,7 +27,6 @@ app.get("/", function(req , res){
 })
 
 app.post("/", function(req , res){
-  console.log("teste")
   let newNote = new Note({
     valor: req.body.valor,
     date: req.body.date
@@ -35,6 +34,28 @@ app.post("/", function(req , res){
   newNote.save();
   res.redirect('/');
 })
+app.post("/date/", async function(req , res){
+
+  let consulta = (await Note.find({}));
+  var soma = 0
+  let data = req.body.datames
+
+  console.log(req.body)
+
+  //console.log(data)
+  consulta.forEach(element => { 
+    if(data == element.date){
+      soma += element.valor
+      console.log(soma)
+
+    }
+
+  });
+  res.send(`<span id="result">${soma}</span>`)
+
+  //res.redirect('/');
+})
+
 
 const Note = mongoose.model("Note", notesSchema);
 

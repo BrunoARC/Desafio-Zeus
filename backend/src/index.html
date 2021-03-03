@@ -5,11 +5,27 @@
 	<title>Pet Wallet</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="/style.css"/>
+	<script src="index.js" ></script>
 </head>
 
 <body>
+	<script>
+
+		function buscar(){
+			console.log("buscar");
+			fetch('http://localhost:3000/date', {method: 'post',
+				body: JSON.stringify({
+					'datames': '2021-01'
+				})
+			})
+			.then(response => response.json())
+			.then(data => console.log("teste: " +data));
+		}
+
+	</script>
+
 	<div id="informacao">
-		<img src="public/LogoPW.png">
+		<img src="/LogoPW.png">
 		<h2>
 			O Pet Wallet ajuda você a administrar melhor os gastos com seus pets.
 		</h2>
@@ -26,14 +42,17 @@
 				Adicionar transação</button><br /><br />
 		</form>
 		<hr />
-		<form>
+		<form method="POST" action="/date/" >
 			<h4>Consulte seu gasto mensal:</h4>
-			<input type="month" name="mes" />
-			<input id="consultar" type="submit" name="consultar" value="Conferir" required />
+			<input type="month" name="datames" />
+			<button id="consultar" name="consultar" required>Conferir</button>
 		</form>
+		
 		<h4>Seu gasto nesse mês foi de:</h4>
-		<input type="text" name="gastomensal" />
+		<input type="text" name="valor" id="result" />
+		
 	</div>
+	<button onclick="buscar()"></button>
 </body>
 
 </html>

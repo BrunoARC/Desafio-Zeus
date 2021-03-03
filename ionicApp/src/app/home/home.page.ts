@@ -9,6 +9,10 @@ export class HomePage {
   valor
   constructor(private http: HttpClient) {}
   send(){
+        var notes = {
+          valor: Number,
+          date: String,
+        };
     let newdate = new Date()
     if(this.valor == undefined){
       console.log("Não preencheu o valor")
